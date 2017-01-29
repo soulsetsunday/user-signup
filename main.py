@@ -18,7 +18,8 @@ def valid_email(email):
 class MainHandler(webapp2.RequestHandler):
     def build_page(self, user_name_entered="", email_entered="", errors=['','','','','']):
         userlable="<label>Username</label>"
-        userarea = "<input name='username' value ="+user_name_entered+">"
+        #userarea = "<input type='text' name='username' value ="+user_name_entered+">"
+        userarea="<textarea name = 'username' rows='1' cols='20'>"+user_name_entered+"</textarea>"
         
         error_element_noname = ""
         if errors[0]:
@@ -57,7 +58,7 @@ class MainHandler(webapp2.RequestHandler):
         emailsection = emaillable+emailarea+error_element_email+"<br>"
         
             
-        header = "<h1>Test Signup</h1>"
+        header = "<h1>Signup</h1>"
         submit = "<input type='submit'/>"
         form = "<form method='post'>"+usersection+passsection+verifysection+emailsection+"<br>"+submit+"</form>"
         return header+form
@@ -102,7 +103,7 @@ class MainHandler(webapp2.RequestHandler):
 class WelcomeHandler(webapp2.RequestHandler):
     def get(self):
         username = self.request.get("username")
-        self.response.write("Welcome, "+username)
+        self.response.write("Welcome, "+username+"!")
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
