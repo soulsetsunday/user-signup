@@ -50,7 +50,8 @@ class MainHandler(webapp2.RequestHandler):
 
 
         emaillable="<label>Email (optional)</label>"
-        emailarea = "<input name='email' value="+email_entered+">"
+        #emailarea = "<input name='email' value="+email_entered+">"
+        emailarea = "<textarea name = 'email'  rows='1' cols='20'>"+email_entered+"</textarea>"
         
         error_element_email = ""
         if errors[4]:
