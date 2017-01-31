@@ -18,8 +18,9 @@ def valid_email(email):
 class MainHandler(webapp2.RequestHandler):
     def build_page(self, user_name_entered="", email_entered="", errors=['','','','','']):
         userlable="<label>Username</label>"
-        #userarea = "<input type='text' name='username' value ="+user_name_entered+">"
-        userarea="<textarea name = 'username' rows='1' cols='20'>"+user_name_entered+"</textarea>"
+        userarea = "<input type='text' name='username' value ='"+user_name_entered+"'>"
+        #userarea="<textarea name = 'username' rows='1' cols='20'>"+user_name_entered+"</textarea>"
+        #for input, note extra quotes
         
         error_element_noname = ""
         if errors[0]:
@@ -50,8 +51,8 @@ class MainHandler(webapp2.RequestHandler):
 
 
         emaillable="<label>Email (optional)</label>"
-        #emailarea = "<input name='email' value="+email_entered+">"
-        emailarea = "<textarea name = 'email'  rows='1' cols='20'>"+email_entered+"</textarea>"
+        emailarea = "<input name='email' value='"+email_entered+"'>"
+        #emailarea = "<textarea name = 'email'  rows='1' cols='20'>"+email_entered+"</textarea>"
         
         error_element_email = ""
         if errors[4]:
